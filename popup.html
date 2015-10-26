@@ -1,0 +1,100 @@
+<!doctype html>
+<!--
+ This page is shown when the extension button is clicked, because the
+ "browser_action" field in manifest.json contains the "default_popup" key with
+ value "popup.html".
+ -->
+<html>
+  <head>
+    <title>Super shorturl generator</title>
+    <link href='https://fonts.googleapis.com/css?family=Lato:300' rel='stylesheet' type='text/css'>
+    <style>
+		* {
+			margin: 0;
+			padding: 0;
+		}
+		body {
+			font-family: 'Lato', arial, sans-serif;
+			font-size: 100%;
+		}
+		#status {
+			white-space: pre;
+			text-overflow: ellipsis;
+			overflow: hidden;
+			max-width: 400px;
+		}
+		#content {
+			background: #F9F9F9;
+			width: 400px;
+			padding: 20px;
+			text-align: center;
+		}
+		.header {
+			text-align: center;
+			margin: 0 0 20px 0;
+		}
+		#url-result {
+			padding: 5px 10px;
+			margin: 15px auto 0 auto;
+			width: 60%;
+			display: block;
+			background: #FFF;
+			border: 1px solid #c82247;
+			color: #c82247;
+		}
+		a {
+			display: inline-block;
+			margin: 0 auto 15px auto; 
+		}
+		a img {
+			height: 50px;
+		}
+		.copy {
+			background: #c82247;
+			color: #FFF;
+			border: 0;
+			text-transform: uppercase;
+			padding: 10px 20px;
+			margin: 25px 0 5px 0;
+			cursor: pointer;
+			transition: all 0.3s ease-out;
+			position: relative;
+			outline: none;
+		}
+		.copy:hover {
+			box-shadow: 0px 2px 8px #989898;
+		}
+    	.copy:after {
+			content: '';
+			height: 200%;
+			width: 10px;
+			background: #FFF;
+			left: -30%;
+			top: -50%;
+			position: absolute;
+			z-index: 1;
+			transform: rotate(30deg);
+			opacity: 0.1;
+			transition: all 0.2s ease-out;
+		}
+		.copy:hover:after {
+			left: 130%;
+		}
+		.copy:after:focus, .copy:focus:after {
+			border: 0;
+		}
+    </style>
+
+    <script src="popup.js"></script>
+  </head>
+  <body>
+    <div id="content">
+      <!-- <p class="header">Couleur Citron</p> -->
+      <a href="http://coulc.it/"><img src="cc.png" alt="Couleur Citron" /></a>
+      <div id="status"></div>
+      <input type="text" id="url-result" hidden />
+      <button class="copy">Copy</button>
+    </div>
+  </body>
+</html>
+
