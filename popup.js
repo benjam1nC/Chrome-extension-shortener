@@ -12,7 +12,7 @@ function init(){
 
 function processTab(){
 
-    var apiAddress = 'http://raphael.shortner.emulgator.interne/app_dev.php/api/v1/shorters/urls.json';
+    var apiAddress = 'http://coulc.it/api/v1/shorters/urls.json';
 
     var result;
 
